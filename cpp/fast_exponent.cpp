@@ -5,7 +5,7 @@ typedef long long ll;
 const ll mod = 1e10;
 const ll N = 61;
 
-ll a,b,r,c,d,e,f, p[33], n[33],i;
+ll a,b,r,c,d,e,f, p[N+2], n[N+2],i;
 
 int main(){
 	scanf("%lld %lld", &a, &b);
