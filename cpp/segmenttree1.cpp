@@ -61,11 +61,17 @@ int main() {
 		tree[i] = dummyval;
 	createsegtree(0, n-1, 0);
 	printtree(0, 0, 2);
+	// how to update example
 	for(i=0;i<k;i++){
 		scanf("%d %d", &x, &y);
 		a[x-1]=y;
 		updatesegtree(0,n-1,0,x-1);
 		printtree(0, 0, 2);
+	}
+	// how to get answer example
+	for(i=0;i<k;i++){
+		scanf("%d %d", &x, &y);
+		printf("%d\n", result(0,n-1,x-1,y-1,0));
 	}
     return 0;
 }
