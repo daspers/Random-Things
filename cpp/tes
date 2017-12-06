@@ -1,0 +1,65 @@
+{Soal 1}
+function SumGenap (L : List) -> integer
+Algoritma
+	if(IsEmpty(L))
+		-> 0
+	else
+		if(Info(L) mod 2 = 0 )
+			-> Info(L) + SumGenap(Next(L))
+		else
+			-> SumGenap(Next(L))
+
+function IsOrdered(L : List) -> boolean
+Algoritma
+	if(IsOneElmt(L)) then
+		-> true
+	else
+		if (Info(L) <= Info(Next(L)) then
+			-> IsOrdered(Next(L))
+		else
+			-> false
+
+procedure DelAllMulOfX (input/output L : List, input X : integer)
+Kamus
+	TList : List
+	P : address
+Algoritma
+	if (IsEmpty(L)) then
+		First(L) <- Nil
+	else
+		DelAllMulOfX(Next(L), X)
+		if (Info(L) = X) then
+			P = First(L)
+			First(L) = Next(L)
+
+{Soal 2}
+
+
+Kamus
+
+	const Mark : char = '#'
+
+	Use Stack
+	Use Queue
+	c,sc,qc : char
+	S : Stack
+	Q : Queue
+	
+Algoritma
+	CreateEmpty(S)
+	CreateEmpty(Q)
+	input(c)
+	while (c!=Mark) do
+		S.push(c)
+		Q.add(c)
+		input(c)
+	pal <- true
+	while(not(IsEmpty(S)) and pal)
+		Pop(S,sc)
+		Del(Q,qc)
+		if(sc != qc)
+			pal <- false
+	if (pal) then
+		output("Masukkan adalah palindrom")
+	else
+		output("Masukkan bukan palindrom")
