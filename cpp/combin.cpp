@@ -8,7 +8,7 @@ ll combin(ll a, ll b){
   b = min(b, a-b);
   ll r =1;
   for(ll i=1;i<=b;i++){
-    r *= a;
+    r *= a--;
     r /= i;
   }
   return r;
