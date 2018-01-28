@@ -87,10 +87,8 @@ int main(){
 			pos[ps++] = arr[i];
 	}
 	radix(10);
-	/*
 	for(ll i=0;i<n;i++)
 		cout<<arr[i]<<" ";
 	cout<<endl;
-	*/
 	return 0;
 }
