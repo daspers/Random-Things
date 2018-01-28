@@ -14,7 +14,7 @@ typedef long long ll;
 ll n, arr[1000006], pos[1000006], neg[1000006];
 ll ps, ns;
 
-void radix(ll base){
+void radix(ll base=10){
 	queue<ll> q[base+1];
 	ll max = 0, md=0, div;
 	//sort positive
