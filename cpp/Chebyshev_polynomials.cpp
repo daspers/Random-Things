@@ -31,8 +31,8 @@ ll recurse(ll n){
 
 //itterative solution
 ll itterative(ll n){
-  coss[0] = 1;
-  coss[1] = coss[3] = x;
+	coss[0] = 1;
+	coss[1] = coss[3] = x;
 	for(i=2;i<=t;i++){
 		coss[2] = 2*coss[1]*coss[3] - coss[0];
 		coss[2] %= mod;
@@ -47,5 +47,5 @@ ll itterative(ll n){
 
 int main(){
 	coss[3] = x;
-  return 0;
+	return 0;
 }
