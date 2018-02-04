@@ -38,11 +38,8 @@ ll itterative(ll n){
 		coss[2] %= mod;
 		coss[0] = coss[1];
 		coss[1] = coss[2];
-		ans = coss[1]*l;
-		ans %= mod;
-		if(ans<0)
-			ans+=mod;
-		fprintf(F, "%lld %lld\n", i, ans);
+	}
+	return coss[1];
 }
 
 int main(){
