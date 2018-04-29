@@ -43,7 +43,7 @@ struct FenwickTree{
 	}
 	void updaterange(int l, int r, T delta){
 		update(l, delta);
-		update(r, -delta);
+		update(r+1, -delta);
 	}
 	T sum(int idx){
 		T res = 0;
