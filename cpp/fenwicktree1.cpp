@@ -19,6 +19,7 @@ struct FenwickTree{
 	FenwickTree(T* arr, int n){
 		tree = new T[n+2];
 		tree[0] = 0;
+		sz = n;
 		for(int i=1;i<=n;i++)
 			tree[i] = tree[i-1]+arr[i];
 		for(int i=n;i>1;i--)
