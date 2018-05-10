@@ -71,9 +71,10 @@ void BinaryHeap<T>::insert(const T& in){
 template <class T>
 T BinaryHeap<T>::pop(){
 	T res;
-	if(pointer>1){
+	--pointer;
+	if(pointer>0){
 		res = arr[1];
-		arr[1] = arr[--pointer];
+		arr[1] = arr[pointer];
 		int ptemp = 1;
 		int l = ptemp<<1;
 		while(l < pointer){
