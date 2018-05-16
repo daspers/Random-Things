@@ -37,11 +37,9 @@ void fft(vector<cd> &a, bool invert){
 		a[i+n/2] = even[i] - w*odd[i];
 		w *= wn;
 	}
-	if(invert){
-		for(cd & tmp: a){
+	if(invert)
+		for(cd & tmp: a)
 			tmp/=2;
-		}
-	}
 }
 
 vector<int> multiply(const vector<int> &a, const vector<int> &b){
