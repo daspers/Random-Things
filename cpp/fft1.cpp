@@ -47,19 +47,14 @@ vector<int> multiply(const vector<int> &a, const vector<int> &b){
 	int sz = 1;
 	while(sz < a.size()+b.size())
 		sz <<= 1;
-	fa.resize(sz);
-	fb.resize(sz);
-	fft(fa, false);
-	fft(fb, false);
-	
+	fa.resize(sz);   fb.resize(sz);
+	fft(fa, false);  fft(fb, false);
 	for(int i=0;i<sz;++i)
 		fa[i] *= fb[i];
 	fft(fa, true);
-	
 	vector<int> res;
-	for(int i=0;i<sz;++i){
-		res.pb(round(fa[i].real()));	//easy
-	}
+	for(int i=0;i<sz;++i)
+		res.pb(round(fa[i].real()));
 	return res;
 }
 
