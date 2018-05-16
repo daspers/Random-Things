@@ -17,23 +17,15 @@ typedef complex<double> cd;
 const ll mod = 1e9+7;
 const double pi = acos(-1);
 
-int reverse(int num, int lg){
-	int res = 0;
-	for(int i=0;i<lg;++i){
-		if(num & (1<<i))
-			res |= 1<<(lg-1-i);
-	}
-	return res;
-}
-
 void fft(vector<cd> &a, bool invert){
 	int n = a.size();
-	int lg = 0;
-	while((1<<lg) < n)
-		++lg;
-	for(int i=0;i<n;++i){
-		if(i<reverse(i, lg))
-			swap(a[i], a[reverse(i, lg)]);
+	for(int i=1,j=0;i<n;++i){
+		int bit = n >>1;
+		for(;j&bit;bit>>=1)
+			j ^= bit;
+		j ^= bit;
+		if(i<j)
+			swap(a[i],a[j]);
 	}
 	int neg = invert?-1:1;
 	for(int len=2;len<=n;len<<=1){
