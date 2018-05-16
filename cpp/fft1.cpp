@@ -1,4 +1,4 @@
-/* RECURSION FFT */
+/* RECURSION FFT (slow) */
 /* From e-maxx */
 #include <bits/stdc++.h>
 
