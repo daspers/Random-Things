@@ -54,7 +54,7 @@ vector<int> multiply(const vector<int> &a, const vector<int> &b){
 	fft(fa, true);
 	vector<int> res;
 	for(int i=0;i<sz;++i)
-		res.pb(round(fa[i].real()));
+		res.pb(floor(fa[i].real()+0.5));
 	return res;
 }
 
