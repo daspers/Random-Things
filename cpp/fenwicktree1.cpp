@@ -42,10 +42,6 @@ struct FenwickTree{
 		for(;idx<=sz;idx += lastbit(idx))
 			tree[idx] += delta;
 	}
-	void updaterange(int l, int r, T delta){
-		update(l, delta);
-		update(r+1, -delta);
-	}
 	T sum(int idx){
 		T res = 0;
 		while(idx >0){
