@@ -3,6 +3,9 @@
 using namespace std;
 
 /* O(SQRT(N)) */
+/* Algorithm
+	phi(N) = N * product_of(1-1/prime_factor)
+*/
 ll totient_func(ll val){
 	ll sq = sqrtl(val);
 	ll ans = val;
