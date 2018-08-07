@@ -40,7 +40,7 @@ struct mapper{
 		sort(m.begin(), m.end());
 		m.erase(unique(m.begin(), m.end()), m.end());
 	}
-	int getIdx(T val){
+	int get(T val){
 		return lower_bound(m.begin(), m.end(), val) - m.begin();
 	}
 };
