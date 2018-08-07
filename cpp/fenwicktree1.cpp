@@ -35,9 +35,7 @@ struct FenwickTree{
 		for(int i=n;i>1;i--)
 			tree[i] -= tree[i - lastbit(i)];
 	}
-	~FenwickTree(){
-		delete[] tree;
-	}
+	~FenwickTree(){ delete[] tree;}
 	void update(int idx, T delta){
 		for(;idx<=sz;idx += lastbit(idx))
 			tree[idx] += delta;
@@ -50,9 +48,7 @@ struct FenwickTree{
 		}
 		return res;
 	}
-	static inline int lastbit(int a){
-		return a&(-a);
-	}
+	static inline int lastbit(int a){ return a&(-a); }
 };
 
 int main(){
