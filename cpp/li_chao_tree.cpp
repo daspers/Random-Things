@@ -33,8 +33,7 @@ ftype f(point a,  ftype x) {
 
 int n,t,j,i,k;
 
-const int maxn = 2e5;
-
+const int maxn = 2e5; // Length of point segment (query)
 point line[4 * maxn];
 
 void add_line(point nw, int v = 1, int l = 0, int r = maxn) {
