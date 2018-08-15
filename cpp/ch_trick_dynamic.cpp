@@ -17,6 +17,8 @@ typedef pair<int, int> pii;
 const ll mod = 1e9+7;
 const double pi = acos(-1);
 
+const ll is_query = -(1LL<<62);
+
 struct Line {
 	ll m, b;
 	mutable function<const Line*()> succ;
