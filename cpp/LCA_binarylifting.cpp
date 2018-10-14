@@ -26,6 +26,8 @@ int up[100002][32];
 int timer;
 int tin[100002], tout[100002];
 
+/* Copy From cp-algorithms.com */
+
 void dfslca(int v, int p){
 	tin[v] = ++timer;
 	up[v][0] = p;
