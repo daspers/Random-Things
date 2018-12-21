@@ -40,8 +40,8 @@ struct mapper{
 		sort(m.begin(), m.end());
 		m.erase(unique(m.begin(), m.end()), m.end());
 	}
-	int get(T val){ return lower_bound(m.begin(), m.end(), val) - m.begin();}
-	int operator[] (T val){ return get(val);}
+	int get(const T &val){ return lower_bound(m.begin(), m.end(), val) - m.begin();}
+	int operator[] (const T &val){ return get(val);}
 };
 
 int n,i,j,k,t;
