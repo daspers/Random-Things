@@ -35,7 +35,7 @@ struct mapper{
 	}
 	void mapping(const vector<T> &arr){
 		m.clear();
-		for(int x : arr)
+		for(const T &x : arr)
 			m.pb(x);
 		sort(m.begin(), m.end());
 		m.erase(unique(m.begin(), m.end()), m.end());
