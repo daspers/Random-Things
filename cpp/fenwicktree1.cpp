@@ -16,6 +16,10 @@ template<class T>
 struct FenwickTree{
 	T *tree;
 	int sz;
+	FenwickTree(int n){
+		tree = new T[n+2];
+		memset(tree, 0, (n+2)*sizeof(T));
+	}
 	FenwickTree(T* arr, int n){
 		tree = new T[n+2];
 		tree[0] = 0;
@@ -40,11 +44,22 @@ struct FenwickTree{
 		for(;idx<=sz;idx += lastbit(idx))
 			tree[idx] += delta;
 	}
+	int lower_bound(T value){
+		T sum = 0;
+		int pos = 0;
+		int LOGN = ceil(log2(sz));
+		for(int i=1<<LOGN; i>0; i>>=1){
+			if(pos + i < sz && sum + bit[pos + i] < v){
+				sum += bit[pos + i];
+				pos += i;
+			}
+		}
+		return pos + 1;
+	}
 	T sum(int idx){
 		T res = 0;
-		while(idx >0){
+		for(;idx >0;idx-=lastbit(idx)){
 			res += tree[idx];
-			idx -= lastbit(idx);
 		}
 		return res;
 	}
