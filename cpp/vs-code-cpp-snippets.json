@@ -1,9 +1,9 @@
 // My custom snippets for competitive programming
 // Feel free to copy, modify, and use it.
 {
-	"segment tree":{
-		"prefix": "/segment-tree",
-		"body": [
+    "segment tree":{
+        "prefix": "/segment-tree",
+        "body": [
             "${1:int} tree[$2];",
             "",
             "void build(int l, int r, int pos){",
