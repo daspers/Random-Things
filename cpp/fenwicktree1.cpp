@@ -18,6 +18,7 @@ struct FenwickTree{
 	int sz;
 	FenwickTree(int n){
 		tree = new T[n+2];
+		sz = n;
 		memset(tree, 0, (n+2)*sizeof(T));
 	}
 	FenwickTree(T* arr, int n){
