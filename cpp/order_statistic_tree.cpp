@@ -31,7 +31,7 @@ class OrderStatisticTree{
     vector<int> bit;
     OrderStatisticTree(int _max_val){
         max_val = _max_val;
-        bit.assign(max_val + 1, 0);
+        bit.assign(max_val + 2, 0);
     }
     void update(int i, int add){
         for(;i > 0 && i < bit.size();i += i & (-i))
