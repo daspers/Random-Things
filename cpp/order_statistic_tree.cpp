@@ -44,17 +44,17 @@ class OrderStatisticTree{
         return ans;
     }
     int lower_bound(int value){
-		int sum = 0;
-		int pos = 0;
-		int LOGN = ceil(log2(max_val+1));
-		for(int i=1<<LOGN; i>0; i>>=1){
-			if(pos + i <= max_val && sum + bit[pos + i] < value){
-				sum += bit[pos + i];
-				pos += i;
-			}
-		}
-		return pos + 1;
-	}
+        int sum = 0;
+        int pos = 0;
+        int LOGN = ceil(log2(max_val+1));
+        for(int i=1<<LOGN; i>0; i>>=1){
+            if(pos + i <= max_val && sum + bit[pos + i] < value){
+                sum += bit[pos + i];
+                pos += i;
+            }
+        }
+        return pos + 1;
+    }
     int select_rank(int rank){
         return lower_bound(rank);
     }
